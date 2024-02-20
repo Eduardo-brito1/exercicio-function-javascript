@@ -26,3 +26,8 @@ const prova = {
     ]
 };
 
+//**a)** Declare uma função de nome `corrigirProva` que tenha apenas um parâmetro chamado `prova`. Faça commit do resultado.
+
+const corrigirProva = (prova) => {
+
+}
