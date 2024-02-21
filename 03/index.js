@@ -27,8 +27,23 @@ const carrinho = {
         cliente:${this.nomeDoCliente}
         total de itens:${quantidadeDeProdutos}
         total a pagar:R$${PreçoTotal.toFixed(2)}`)
-    }
+    },
+    addProduto:
+        function addProdutoAoCarrinho(produto) {
+            for (let i = 0; i < this.produtos.length; i++) {
+                if (this.produtos[i].nome == produto.nome) {
+                    this.produtos[i].qtd = this.produtos[i].qtd + produto.qtd
+                    break;
+                } else {
+                    this.produtos.push(produto)
+                    break;
+                }
+            }
+        }
 }
+
+
+
 
 const novaBermuda = {
     id: 2,
@@ -37,18 +52,14 @@ const novaBermuda = {
     precoUnit: 5000
 }
 
-function addProdutoAoCarrinho(carrinho, produto) {
-    for (let i = 0; i < carrinho.produtos.length; i++) {
-        if (carrinho.produtos[i].nome == produto.nome) {
-            carrinho.produtos[i].qtd = carrinho.produtos[i].qtd + produto.qtd
-            break;
-        } else {
-            carrinho.produtos.push(produto)
-            break;
-        }
-    }
+const novoTenis = {
+    id: 3,
+    nome: "Tenis",
+    qtd: 1,
+    precoUnit: 10000
 }
 
-addProdutoAoCarrinho(carrinho, novaBermuda)
 
-console.log(carrinho)
+carrinho.addProduto(novaBermuda)
+carrinho.addProduto(novoTenis)
+carrinho.imprimirResumo()

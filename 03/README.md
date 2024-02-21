@@ -58,8 +58,7 @@ const novaBermuda = {
     precoUnit: 5000
 }
 
-addProdutoAoCarrinho(carrinho, novaBermuda);
-carrinho.imprimirResumo();
+ 
 ```
 
 Isso deve imprimir o seguinte resultado:
